@@ -8,9 +8,9 @@ Automated Rotational Center Hurricane Eye Retrieval
 	with one exception: it also needs the pyproj module. One way to add 
 	this module is
 
-'''bash
+```bash
 conda install pyproj
-'''
+```
 
 2. The script demo.py has numerous examples for testing the algorithm
 	on a variety of input data. Follow the comments at the beginning 
