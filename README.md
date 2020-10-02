@@ -1,14 +1,16 @@
-00readme.txt
+# ARCHER
 
-Reference for using the archer python package (archer_pypack/)
-Anthony Wimmers
-April 2020
+Automated Rotational Center Hurricane Eye Retrieval
+
+## Notes
 
 1. This package works with the standard Anaconda Python3 distribution,
 	with one exception: it also needs the pyproj module. One way to add 
 	this module is
 
-	$ conda install pyproj
+'''bash
+conda install pyproj
+'''
 
 2. The script demo.py has numerous examples for testing the algorithm
 	on a variety of input data. Follow the comments at the beginning 
