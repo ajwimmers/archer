@@ -29,7 +29,9 @@ conda install pyproj
 
 	a. Better error-trapping and elegant exiting from improper/incomplete 
 		data inputs
+
 	b. Better/different status messages during execution, or messages that 
 		follow a GeoIPS standard
+
 	c. Capabilities to input other data sources not included (yet) in
 		demo.py
