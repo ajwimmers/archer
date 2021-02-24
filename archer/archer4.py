@@ -154,7 +154,9 @@ def archer4(image, attrib, first_guess, para_fix=True, display_filename=None):
 
     # Produce an fdeck-formatted string
     fdeck_str = fdtbx.generate_string(attrib, in_dict, out_dict)
+    print('fdeck output:')
     print(fdeck_str)
+    out_dict['fdeck_string'] = fdeck_str
 
 
     return in_dict, out_dict, score_dict
