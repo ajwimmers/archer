@@ -1,6 +1,8 @@
 from __future__ import print_function
 from archer.archer4_mw  import archer4_mw
 from archer.archer4_visir import archer4_visir
+import archer.utilities.fdeckToolbox as fdtbx
+
 
 def archer4(image, attrib, first_guess, para_fix=True, display_filename=None):
 
@@ -148,6 +150,11 @@ def archer4(image, attrib, first_guess, para_fix=True, display_filename=None):
             image, attrib, first_guess, para_fix=para_fix, display_filename=display_filename)
 
     # In the future, add an option for archer4_scat
+
+
+    # Produce an fdeck-formatted string
+    fdeck_str = fdtbx.generate_string(attrib, in_dict, out_dict)
+    print(fdeck_str)
 
 
     return in_dict, out_dict, score_dict

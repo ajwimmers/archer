@@ -137,7 +137,7 @@ if False or calc_all:
         archer4(image, attrib, first_guess, para_fix=True, display_filename='imgs/demo_conic_89h.png')
 
 
-if False or calc_all:
+if True or calc_all:
 
     data = loadmat('./data/20200208T094041_ssmis18_85.mat')
 
@@ -504,7 +504,7 @@ if False or calc_all:
         archer4(image, attrib, first_guess, para_fix=True, display_filename='imgs/demo_atms_89.png')
 
 
-if True or calc_all:
+if False or calc_all:
 
     # Apply 183 GHz data grabbed from a CLASS file:
 
