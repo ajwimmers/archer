@@ -164,6 +164,8 @@ def plot_diag_3panel(image, attrib, in_dict, out_dict, score_dict, display_filen
     ax1 = plt.subplot(gs[0,1])
     # This explains the nan-related runtime error for the following line: https://github.com/matplotlib/matplotlib/issues/9892
     img1 = plt.pcolormesh(lon_grid_disp, lat_grid_disp, bt_grid_disp, vmin=color_lo[1], vmax=color_hi[1], cmap='jet_r')
+    plt.xlim(np.min(lon_grid_disp[0,:]), np.max(lon_grid_disp[0,:]))
+    plt.ylim(np.min(lat_grid_disp[:,0]), np.max(lat_grid_disp[:,0]))
 
     ring_score_grid_disp = score_dict['ring_score_grid'] + 0
     ring_score_grid_disp[ring_score_grid_disp == 0] = np.nan
@@ -190,6 +192,8 @@ def plot_diag_3panel(image, attrib, in_dict, out_dict, score_dict, display_filen
     ax2 = plt.subplot(gs[0,2])
     # This explains the nan-related runtime error for the following line: https://github.com/matplotlib/matplotlib/issues/9892
     img2 = plt.pcolormesh(lon_grid_disp, lat_grid_disp, bt_grid_disp, vmin=color_lo[2], vmax=color_hi[2], cmap='jet_r')
+    plt.xlim(np.min(lon_grid_disp[0,:]), np.max(lon_grid_disp[0,:]))
+    plt.ylim(np.min(lat_grid_disp[:,0]), np.max(lat_grid_disp[:,0]))
 
     if out_dict['uses_target']:
         combo_score_grid_disp = score_dict['combo_score_grid']

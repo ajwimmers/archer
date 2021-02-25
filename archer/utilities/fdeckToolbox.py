@@ -3,10 +3,15 @@ import numpy as np
 import datetime
 
 
-def generate_string(attrib, in_dict, out_dict):
+def generate_string(attrib, in_dict, out_dict, sector_info=None):
 
-    bn = 'BB' ###################
-    cy = 'NN' ###################
+    if sector_info is not None:
+        bn = sector_info['storm_basin']
+        cy = sector_info['storm_num']
+    else:
+        # Placeholders
+        bn = 'BB' 
+        cy = 'NN' 
 
     image_dt = datetime.datetime.utcfromtimestamp(in_dict['time'])
     YYYYMMDDHHMM = image_dt.strftime('%y%m%d%H%M')

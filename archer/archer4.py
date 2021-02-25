@@ -4,7 +4,7 @@ from archer.archer4_visir import archer4_visir
 import archer.utilities.fdeckToolbox as fdtbx
 
 
-def archer4(image, attrib, first_guess, para_fix=True, display_filename=None):
+def archer4(image, attrib, first_guess, sector_info=None, para_fix=True, display_filename=None):
 
     # archer4:
     #
@@ -43,6 +43,11 @@ def archer4(image, attrib, first_guess, para_fix=True, display_filename=None):
         first_guess['lat']: Estimated first guess latitute of TC center.
         first_guess['lon']: Estimated first guess longitude of TC center.
             *: Optional. Not used yet, but probably will be brought in later.
+
+    sector_info: Dictionary available from GeoIPS (pyresample). Currently this is only used here
+        for information passed on to the f-deck output string
+        sector_info['storm_basin'] : Two-character basin code
+        sector_info['storm_num'] : Two-digit storm code
 
     para_fix: Flag to control whether to apply parallax fix to the imagery. True [or False].
 
@@ -153,7 +158,7 @@ def archer4(image, attrib, first_guess, para_fix=True, display_filename=None):
 
 
     # Produce an fdeck-formatted string
-    fdeck_str = fdtbx.generate_string(attrib, in_dict, out_dict)
+    fdeck_str = fdtbx.generate_string(attrib, in_dict, out_dict, sector_info=sector_info)
     print('fdeck output:')
     print(fdeck_str)
     out_dict['fdeck_string'] = fdeck_str
