@@ -176,7 +176,7 @@ def archer4_visir(image, attrib, first_guess, para_fix=True, display_filename=No
             # With IR imagery, we have to consider pixels with partial clouds/convection.
             # Dilate these features by 2 (NOTE: for ~10 km resolution):
 
-            if archer_channel_type is 'IR':
+            if attrib['archer_channel_type'] is 'IR':
 
                 dilate_val = 2
                 out_mx = in_dict['bt_mx']
